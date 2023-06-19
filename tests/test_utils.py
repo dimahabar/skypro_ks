@@ -8,7 +8,7 @@ def test_get_data():
 
 def test_get_filtered_data(test_data):
     data = get_filtered_data(test_data)
-    assert  len(data) == 3
+    assert  len(data) == 4
 
 def test_get_last_values(test_data):
     data = get_last_values(test_data, 4)
@@ -16,10 +16,10 @@ def test_get_last_values(test_data):
 
 def test_formatted_data(test_data):
     data = get_formatted_data(test_data)
-    assert data == ['26.08.2019 Перевод организации\nMaestro 779775** **** 5199 -> Счет ** 9589\n31957.58руб.']
+    assert data == ['26.08.2019 РџРµСЂРµРІРѕРґ РѕСЂРіР°РЅРёР·Р°С†РёРё\nMaestro 779775** **** 5199 -> РЎС‡РµС‚ ** 9589\n31957.58СЂСѓР±.']
 
 @pytest.mark.parametrize("test_input,expected", [
-    ("Счет 64686473678894779589", "Счет ** 9589"),
+    ("РЎС‡РµС‚ 64686473678894779589", "РЎС‡РµС‚ ** 9589"),
     ("MasterCard 7158300734726758", "MasterCard 715830** **** 6758")
 ])
 def test_ecode_bill_info(test_input, expected):
